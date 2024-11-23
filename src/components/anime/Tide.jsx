@@ -5,7 +5,7 @@ const Tide = () => {
   const { waveRef, width } = useWaveAnimation();
 
   return (
-    <div className="relative -z-50 overflow-hidden h-[320px] bg-[#ccc]">
+    <div className="relative -z-50 overflow-hidden h-[320px]">
       <div className="h-full bg-[#ccc]"></div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
