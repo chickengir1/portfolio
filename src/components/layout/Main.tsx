@@ -12,43 +12,53 @@ const Main: React.FC<MainProps> = ({ isIntersecting }) => {
   const [currentSection, setCurrentSection] = useState(SECTIONS[0]?.name || "");
   const shouldObserve = useResize();
 
-  const animate = {
-    aside: {
+  const styles = {
+    container:
+      "mx-2 sm:px-8 flex flex-col items-center lg:flex-row overflow-hidden",
+    mainContent:
+      "flex flex-col px-0 sm:px-4 lg:flex-row w-full transition-all duration-500 flex-grow bg-[#ccc]",
+    sidebar: "lg:w-1/5 p-4 lg:p-6 transition-all duration-500 flex-shrink-0",
+    timeline:
+      "lg:w-4/5 w-full px-2 py-6 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl leading-relaxed text-gray-800",
+    left: {
       visible: "opacity-100 translate-x-0",
       hidden: "opacity-0 -translate-x-10",
     },
-    main: {
+    right: {
       visible: "opacity-100 translate-x-0",
       hidden: "opacity-0 translate-x-10",
     },
   };
 
   return (
-    <div className="flex flex-col lg:flex-row min-h-screen overflow-hidden">
-      <aside
-        className={`lg:w-1/4 w-full p-4 transition-all duration-500 ${
-          shouldObserve && isIntersecting
-            ? animate.aside.visible
-            : shouldObserve
-            ? animate.aside.hidden
-            : animate.aside.visible
-        } bg-gray-100`}
-      >
-        <Sidebar
-          onSectionChange={setCurrentSection}
-          currentSection={currentSection}
-        />
-      </aside>
+    <div className={styles.container}>
       <main
-        className={`lg:w-3/4 w-full p-8 transition-all duration-500 ${
+        className={`${styles.mainContent} ${
           shouldObserve && isIntersecting
-            ? animate.main.visible
+            ? styles.right.visible
             : shouldObserve
-            ? animate.main.hidden
-            : animate.main.visible
-        } bg-[#ccc]`}
+            ? styles.right.hidden
+            : styles.right.visible
+        }`}
       >
-        <Timeline currentSection={currentSection} />
+        {/* Sidebar */}
+        <aside
+          className={`${styles.sidebar} ${
+            shouldObserve && isIntersecting
+              ? styles.left.visible
+              : shouldObserve
+              ? styles.left.hidden
+              : styles.left.visible
+          }`}
+        >
+          <Sidebar
+            onSectionChange={setCurrentSection}
+            currentSection={currentSection}
+          />
+        </aside>
+        <div className={styles.timeline}>
+          <Timeline currentSection={currentSection} />
+        </div>
       </main>
     </div>
   );

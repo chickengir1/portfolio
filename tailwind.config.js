@@ -3,6 +3,10 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        eng: ["Preahvihear", "sans-serif"],
+        kor: ["Gowun Dodum", "sans-serif"],
+      },
       keyframes: {
         draw: {
           "0%": { strokeDasharray: "0, 100000" },

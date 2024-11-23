@@ -32,7 +32,7 @@ const WordCloud: React.FC = () => {
     if (!canvasRef.current) return;
 
     const renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setClearColor(0xffffff);
+    renderer.setClearColor(0xcccccc);
     renderer.setPixelRatio(window.devicePixelRatio);
     canvasRef.current.appendChild(renderer.domElement);
     rendererRef.current = renderer;

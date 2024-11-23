@@ -11,7 +11,7 @@ const App = () => {
   const isIntersecting = useIntersectionObserver({
     root: null,
     rootMargin: "0px",
-    threshold: 0.8,
+    threshold: 0.1,
   });
 
   useEffect(() => {
@@ -21,17 +21,17 @@ const App = () => {
   }, [isIntersecting, isTriggered]);
 
   return (
-    <div>
+    <div className="font-kor">
       <div className="sm:min-h-screen">
         <Header isIntersecting={isTriggered} />
         <Tide />
       </div>
-      <div id="next-section" className="min-h-screen">
-        <div className="min-h-screen">
+      <div id="next-section">
+        <div className="min-h-[50vh] bg-[#ccc]">
           <Main isIntersecting={isTriggered} />
         </div>
       </div>
-      <div className="flex justify-center items-center min-h-screen w-full">
+      <div className="bg-[#ccc] flex justify-center items-center min-h-screen w-full">
         <WordCloud />
       </div>
     </div>

@@ -6,29 +6,34 @@ type TimelineProps = {
 };
 
 const Timeline: React.FC<TimelineProps> = ({ currentSection }) => {
-  const filteredSections = SECTIONS.filter(
+  const filteredSection = SECTIONS.find(
     (section) => section.name === currentSection
   );
 
+  if (!filteredSection) {
+    return null;
+  }
+
   return (
-    <div className="overflow-x-auto snap-x snap-mandatory scrollbar-hide">
-      <div className="flex space-x-8 min-h-fit">
-        {filteredSections.map((section, index) => (
+    <div className="h-full backdrop-blur-lg">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 h-full">
+        {filteredSection.content.map((item, idx) => (
           <div
-            key={index}
-            className="flex-shrink-0 w-full snap-center px-4 md:px-8 lg:px-16"
+            key={idx}
+            className="flex flex-col justify-between bg-[#ddd] p-4 rounded-lg shadow-md w-full h-full"
           >
-            <h2 className="text-2xl font-semibold mb-4">{section.name}</h2>
-            <div className="space-y-4">
-              {section.content.map((item, idx) => (
-                <div key={idx} className="space-y-2">
-                  {item.question && (
-                    <h3 className="text-xl font-medium">{`Q. ${item.question}`}</h3>
-                  )}
-                  {item.answer && <p>{item.answer}</p>}
-                </div>
-              ))}
-            </div>
+            {item.question && (
+              <h3 className="text-base sm:text-lg xl:text-lg font-semibold mb-2">
+                {`Q ${item.question}`}
+              </h3>
+            )}
+            {item.answer && (
+              <div className="flex items-center justify-center flex-grow">
+                <p className="text-sm sm:text-base xl:text-lg tracking-wide leading-relaxed text-gray-800">
+                  {`A ${idx + 1}. ${item.answer}`}
+                </p>
+              </div>
+            )}
           </div>
         ))}
       </div>
