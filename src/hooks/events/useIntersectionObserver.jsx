@@ -1,29 +1,23 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 
-const useIntersectionObserver = (options, callback) => {
+const useIntersectionObserver = (options) => {
   const [isIntersecting, setIsIntersecting] = useState(false);
-  const targetRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
       setIsIntersecting(entry.isIntersecting);
-      if (callback) {
-        callback(entry);
-      }
+      console.log("isIntersecting:", entry.isIntersecting);
     }, options);
 
-    if (targetRef.current) {
-      observer.observe(targetRef.current);
-    }
+    const target = document.querySelector("#next-section");
+    if (target) observer.observe(target); // 타겟 요소가 존재할 때만 감지 시작
 
     return () => {
-      if (targetRef.current) {
-        observer.unobserve(targetRef.current);
-      }
+      if (target) observer.unobserve(target); // 타겟 요소 감지 중단
     };
-  }, [options, callback]);
+  }, [options]);
 
-  return { targetRef, isIntersecting };
+  return isIntersecting;
 };
 
 export default useIntersectionObserver;
