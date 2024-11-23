@@ -2,23 +2,33 @@ import { useState, useEffect } from "react";
 import Header from "./components/layout/Header";
 import Tide from "./components/anime/Tide";
 import useIntersectionObserver from "./hooks/events/useIntersectionObserver";
+import Intro from "./components/layout/Intro";
 import Main from "./components/layout/Main";
 import WordCloud from "./components/layout/WordCloud";
 
 const App = () => {
   const [isTriggered, setIsTriggered] = useState(false);
 
-  const isIntersecting = useIntersectionObserver({
+  const headerThreshold = 0.3;
+  const mainThreshold = 0.9;
+
+  const isMainIntersecting = useIntersectionObserver({
     root: null,
     rootMargin: "0px",
-    threshold: 0.1,
+    threshold: mainThreshold,
+  });
+
+  const isHeaderIntersecting = useIntersectionObserver({
+    root: null,
+    rootMargin: "0px",
+    threshold: headerThreshold,
   });
 
   useEffect(() => {
-    if (isIntersecting && !isTriggered) {
+    if (isHeaderIntersecting && !isTriggered) {
       setIsTriggered(true);
     }
-  }, [isIntersecting, isTriggered]);
+  }, [isHeaderIntersecting, isTriggered]);
 
   return (
     <div className="font-kor">
@@ -26,9 +36,12 @@ const App = () => {
         <Header isIntersecting={isTriggered} />
         <Tide />
       </div>
+      <div className="flex w-full bg-[#ccc] ">
+        <Intro isIntersecting={isMainIntersecting} />
+      </div>
       <div id="next-section">
-        <div className="min-h-[50vh] bg-[#ccc]">
-          <Main isIntersecting={isTriggered} />
+        <div className="flex min-h-[50vh] bg-[#ccc]">
+          <Main isIntersecting={isMainIntersecting} />
         </div>
       </div>
       <div className="bg-[#ccc] flex justify-center items-center min-h-screen w-full">

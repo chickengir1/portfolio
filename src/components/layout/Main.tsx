@@ -31,7 +31,7 @@ const Main: React.FC<MainProps> = ({ isIntersecting }) => {
   };
 
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <main
         className={`${styles.mainContent} ${
           shouldObserve && isIntersecting
@@ -60,7 +60,7 @@ const Main: React.FC<MainProps> = ({ isIntersecting }) => {
           <Timeline currentSection={currentSection} />
         </div>
       </main>
-    </div>
+    </section>
   );
 };
 

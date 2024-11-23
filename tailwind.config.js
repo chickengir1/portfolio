@@ -19,7 +19,7 @@ export default {
       },
       animation: {
         draw: "draw 2s linear forwards",
-        wave: "wave 5s linear infinite",
+        wave: "wave 3s linear infinite",
       },
     },
   },

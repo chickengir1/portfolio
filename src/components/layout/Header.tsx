@@ -9,7 +9,7 @@ type HeaderProps = {
 
 const Header: React.FC<HeaderProps> = ({ isIntersecting }) => {
   const { pathAni, chatEvent } = useEventState();
-  const { text } = useChatAnime(`"About Me"`);
+  const { text } = useChatAnime(`"Front-end Developer Lee's"`);
 
   return (
     <div className="relative h-[50vh] sm:h-[60vh] md:h-[70vh] bg-[#333] flex justify-center items-center">
@@ -17,8 +17,8 @@ const Header: React.FC<HeaderProps> = ({ isIntersecting }) => {
         <div className="relative w-full h-full flex flex-col items-center justify-center">
           <div className="relative">
             {chatEvent && !isIntersecting && (
-              <div className="fixed top-10 left-1/2 transform -translate-x-1/2">
-                <h1 className="text-gray-300 z-50 text-2xl md:text-4xl tracking-widest">
+              <div className="z-50 mx-8 w-8/12 fixed top-20 left-1/2 transform -translate-x-1/2">
+                <h1 className="text-gray-300 z-10 text-2xl md:text-4xl tracking-widest">
                   {text}
                 </h1>
               </div>
