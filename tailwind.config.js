@@ -8,9 +8,14 @@ export default {
           "0%": { strokeDasharray: "0, 100000" },
           "100%": { strokeDasharray: "100000 , 0" },
         },
+        wave: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
       },
       animation: {
         draw: "draw 2s linear forwards",
+        wave: "wave 5s linear infinite",
       },
     },
   },

@@ -1,43 +1,24 @@
-import { useState, useEffect } from "react";
 import PathAni from "../anime/PathAni";
-import { pathAnimationEvent, randomEvent } from "../../utils/events/events";
+import useEventState from "../../hooks/events/useEventState";
+import useChatAnime from "../../hooks/events/useChatAnime";
 
 const Header = () => {
-  const [eventState, setEventState] = useState({
-    pathAni: false,
-    randomEvent: false,
-  });
-
-  useEffect(() => {
-    const handleEventsInOrder = async () => {
-      await pathAnimationEvent();
-      setEventState((prev) => ({
-        ...prev,
-        pathAni: true,
-      }));
-
-      await randomEvent();
-      setEventState((prev) => ({
-        ...prev,
-        randomEvent: true,
-      }));
-    };
-
-    handleEventsInOrder();
-  }, []);
+  const { pathAni, chatEvent } = useEventState();
+  const { text } = useChatAnime(`"About Me"`);
 
   return (
-    <div className="relative h-[100vh] bg-[#ccc] flex justify-center items-center">
-      {eventState.pathAni && (
-        <div className="absolute w-full h-full flex justify-center items-center">
-          <PathAni />
-        </div>
-      )}
-
-      {eventState.randomEvent && (
-        <div className="absolute z-[10] text-center">
-          <div className="backdrop-blur-md bg-gray-200 p-4 rounded-lg shadow-lg">
-            Random Event 완료!
+    <div className="relative h-[50vh] sm:h-[60vh] md:h-[70vh] bg-[#333] flex justify-center items-center">
+      {pathAni && (
+        <div className="relative w-full h-full flex flex-col items-center justify-center">
+          <div className="relative">
+            {chatEvent && (
+              <div className="fixed top-10 left-1/2 transform -translate-x-1/2">
+                <h1 className="text-gray-300 text-2xl md:text-4xl tracking-widest">
+                  {text}
+                </h1>
+              </div>
+            )}
+            <PathAni />
           </div>
         </div>
       )}

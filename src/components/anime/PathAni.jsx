@@ -7,12 +7,12 @@ const PathAni = () => {
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1280 1109"
         preserveAspectRatio="xMidYMid meet"
-        className="-z-50 ml-6 sm:ml-0 w-full max-w-[90%] sm:max-w-[400px] md:min-w-[500px] lg:min-w-[700px] h-auto"
+        className="-z-50 ml-6 sm:ml-0 w-full max-w-[90%] sm:max-w-[400px] md:min-w-[500px] lg:min-w-[600px] h-auto"
       >
         <g
           transform="translate(0.000000,1109.000000) scale(0.100000,-0.100000)"
           fill="none"
-          stroke="#000000"
+          stroke="#d1d5db"
           strokeWidth="20"
           className="animate-draw"
         >
