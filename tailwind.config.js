@@ -12,14 +12,17 @@ export default {
           "0%": { strokeDasharray: "0, 100000" },
           "100%": { strokeDasharray: "100000 , 0" },
         },
-        wave: {
-          "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(-100%)" },
+        bounceUpDown: {
+          "0%, 100%": { transform: "translateY(-2px)" },
+          "50%": { transform: "translateY(4px)" },
+        },
+        dropShadow: {
+          strong: "0px 4px 6px rgba(0, 0, 0, 0.8)",
         },
       },
       animation: {
         draw: "draw 2s linear forwards",
-        wave: "wave 3s linear infinite",
+        bounceUpDown: "bounceUpDown 1.5s infinite",
       },
     },
   },
