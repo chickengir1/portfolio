@@ -1,51 +1,24 @@
-import { useState, useEffect } from "react";
 import Header from "./components/layout/Header";
-import Tide from "./components/anime/Tide";
-import useIntersectionObserver from "./hooks/events/useIntersectionObserver";
-import Intro from "./components/layout/Intro";
-import Main from "./components/layout/Main";
+import About from "./components/layout/About";
 import WordCloud from "./components/layout/WordCloud";
 
 const App = () => {
-  const [isTriggered, setIsTriggered] = useState(false);
-
-  const headerThreshold = 0.3;
-  const mainThreshold = 0.9;
-
-  const isMainIntersecting = useIntersectionObserver({
-    root: null,
-    rootMargin: "0px",
-    threshold: mainThreshold,
-  });
-
-  const isHeaderIntersecting = useIntersectionObserver({
-    root: null,
-    rootMargin: "0px",
-    threshold: headerThreshold,
-  });
-
-  useEffect(() => {
-    if (isHeaderIntersecting && !isTriggered) {
-      setIsTriggered(true);
-    }
-  }, [isHeaderIntersecting, isTriggered]);
-
   return (
     <div className="font-kor">
-      <div className="sm:min-h-screen">
-        <Header isIntersecting={isTriggered} />
-        <Tide />
+      <div className="-z-40 sticky top-0 bg-[#ccc]">
+        <Header />
       </div>
-      <div className="flex w-full bg-[#ccc] ">
-        <Intro isIntersecting={isMainIntersecting} />
+      <div id="section1" className="bg-[#2D2D2D]">
+        <About />
       </div>
-      <div id="next-section">
-        <div className="flex min-h-[50vh] bg-[#ccc]">
-          <Main isIntersecting={isMainIntersecting} />
-        </div>
-      </div>
-      <div className="bg-[#ccc] flex justify-center items-center min-h-screen w-full">
+      <div className="-z-40 sticky top-0 bg-[#ccc] flex justify-center items-center w-full h-screen">
         <WordCloud />
+      </div>
+      <div
+        id="section1"
+        className="flex items-center justify-center bg-[#2D2D2D] min-h-screen"
+      >
+        <h1 className="font-bold text-gray-300">스킬 설명 들어갈거임</h1>
       </div>
     </div>
   );

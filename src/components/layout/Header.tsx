@@ -3,31 +3,25 @@ import PathAni from "../anime/PathAni";
 import useEventState from "../../hooks/events/useEventState";
 import useChatAnime from "../../hooks/anime/useChatAnime";
 
-type HeaderProps = {
-  isIntersecting: boolean;
-};
-
-const Header: React.FC<HeaderProps> = ({ isIntersecting }) => {
+const Header: React.FC = () => {
   const { pathAni, chatEvent } = useEventState();
   const { text } = useChatAnime(`"Front-end Developer Lee's"`);
 
   return (
-    <div className="relative h-[50vh] sm:h-[60vh] md:h-[70vh] bg-[#333] flex justify-center items-center">
+    <section className="py-8 flex flex-col justify-end items-center">
       {pathAni && (
-        <div className="relative w-full h-full flex flex-col items-center justify-center">
-          <div className="relative">
-            {chatEvent && !isIntersecting && (
-              <div className="z-50 mx-8 w-8/12 fixed top-20 left-1/2 transform -translate-x-1/2">
-                <h1 className="text-gray-300 z-10 text-2xl md:text-4xl tracking-widest">
-                  {text}
-                </h1>
-              </div>
+        <section className="flex flex-col-reverse items-center justify-between">
+          <div className="flex min-h-12 items-center justify-center mt-4">
+            {chatEvent && (
+              <h1 className="z-10 text-gray-900 text-center text-base md:text-2xl tracking-widest">
+                {text}
+              </h1>
             )}
-            <PathAni />
           </div>
-        </div>
+          <PathAni />
+        </section>
       )}
-    </div>
+    </section>
   );
 };
 
