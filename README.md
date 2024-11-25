@@ -1,50 +1,47 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# **Portfolio Project**
 
-## Expanding the ESLint configuration
+## **프로젝트 소개**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+이 프로젝트는 개인 포트폴리오 웹사이트로, vite를 사용하여 구축되었습니다. 프로젝트 경험, 기술 스택 및 기타 정보를 깔끔한 UI와 직관적인 인터페이스로 제공하는 것이 목적입니다.
 
-- Configure the top-level `parserOptions` property like this:
+---
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## **주요 기능**
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### 1. **홈페이지**
+- 개발자의 소개 및 주요 경력 정보 제공.
+- 소셜 미디어 및 연락처 링크 포함.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### 2. **연락처**
+- 이메일, GitHub 등의 링크 제공.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### 3. **기술 스택**
+- 사용 가능한 언어 및 기술을 아이콘으로 정리.
+- 각 기술의 숙련도 표시.
+
+### 4. **프로젝트 섹션**
+- 참여한 프로젝트 목록을 카테고리별로 정리.
+- 프로젝트별 상세 설명, 기술 스택, GitHub 링크, 배포 URL 제공.
+
+---
+
+## **기술 스택**
+
+### **프론트엔드**
+- **Vite**: 컴포넌트 기반 UI 구축.
+- **Tailwind Css**: 스타일링 및 UI 관리.
+- **TypeScript**: 코드 가독성과 유지보수성 향상.
+
+---
+
+## **프로젝트 특징**
+
+1. **반응형 디자인**: 모바일, 태블릿, 데스크탑 환경에서 모두 최적화.
+2. **사용자 친화적 인터페이스**: 직관적이고 깔끔한 UI 제공.
+3. **재사용 가능한 컴포넌트 구조**: 확장성과 유지보수성 강화.
+4. **GitHub Pages를 통한 배포**: 빠르고 안정적인 호스팅.
+
+---
