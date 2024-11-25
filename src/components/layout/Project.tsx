@@ -6,6 +6,7 @@ import Features from "../chip/Features";
 type ProjectType = {
   id: number;
   url?: string;
+  github?: string;
   title: string;
   description: string;
   features: string[];
@@ -20,7 +21,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => (
   <div className="flex flex-col gap-4 p-8 bg-[#e5e3e3] border-2 rounded-lg w-full shadow-lg">
     <div className="flex flex-col items-center gap-2">
       <a
-        href={project.url}
+        href={project.github}
         target="_blank"
         rel="noopener noreferrer"
         className="inline-block"

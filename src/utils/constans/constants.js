@@ -68,6 +68,8 @@ export const projects = [
     title: "엘리스 스토어",
     description: "엘리스 Iot트랙 2차 프로젝트 e-commerce 쇼핑몰 입니다.",
     features: ["배송 수정, 상품 수정", "상품 검색 기능", "카테고리 별 정렬"],
+    url: "",
+    github: "https://github.com/chickengir1/Iot-3-e-commerce",
     techStack: ["Styled-components", "JavaScript", "Vite"],
   },
   {
@@ -80,6 +82,7 @@ export const projects = [
       "대시보드 스마트팜 기기 조작",
     ],
     url: "https://34.64.173.146/",
+    github: "https://github.com/chickengir1/elice-Iot3",
     techStack: ["Vite", "JavaScript", "Redux", "MUI"],
   },
   {
@@ -88,6 +91,7 @@ export const projects = [
     description: "Friendly AI 해커톤에서 개발한 디스코드 봇 생성기입니다.",
     features: ["디스코드 봇 커스텀 UI", "대시보드로 봇 전체 관리"],
     url: "https://chickengir1.github.io/LLMfront/",
+    github: "https://github.com/chickengir1/LLMfront",
     techStack: ["React", "OAuth2.0"],
   },
   {
@@ -96,6 +100,7 @@ export const projects = [
     description: "프롬프트 기반 이미지 생성 애플리케이션입니다.",
     features: ["프롬프트 기반 이미지 생성", "생성된 이미지를 URL로 변환"],
     url: "https://aimg-15ctjutvs-lees-projects-1cb4a49b.vercel.app/",
+    github: "https://github.com/chickengir1/aimg",
     techStack: ["JavaScript", "OpenAI DALL·E"],
   },
   {
@@ -104,6 +109,7 @@ export const projects = [
     description: "프론트엔드 포트폴리오 웹 사이트입니다.",
     features: ["Three.js를 이용한 워드 클라우드", "SVG Path Animation"],
     url: "https://chickengir1.github.io/portfolio/",
+    github: "https://github.com/chickengir1/portfolio",
     techStack: ["TypeScript", "Three.js", "Vite", "Tailwind CSS"],
   },
 ];
