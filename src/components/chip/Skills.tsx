@@ -13,7 +13,7 @@ const Skills = () => {
         <h3
           className="font-bold text-lg sm:text-xl md:text-2xl"
           style={{
-            color: "#ddd",
+            color: "#000",
             border: `2px solid #ccc`,
             borderRadius: 4,
             background: `${item.color}`,

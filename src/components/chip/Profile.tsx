@@ -15,7 +15,6 @@ const Profile = () => {
 
   const profile = profileArr.map((item) => {
     if (item.id === "깃허브") {
-      // 깃허브 항목에 링크 적용
       return (
         <a
           key={item.id}

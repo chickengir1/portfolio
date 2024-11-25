@@ -60,7 +60,7 @@ const Slider: React.FC = () => {
   });
 
   return (
-    <div className="text-gray-300 py-12">
+    <div className="text-gray-900 py-12">
       <div className="w-[120%] border-y-8 transform mx-auto p-5">
         <div ref={carouselRef} className="flex whitespace-nowrap">
           {slider}
