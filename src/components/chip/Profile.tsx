@@ -3,6 +3,7 @@ import { FaUser, FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 const Profile = () => {
   const profileArr = [
     { id: "이름", value: "이강호", icon: <FaUser /> },
+    { id: "이메일", value: "rkdgh1198@gmail.com", icon: <FaEnvelope /> },
     {
       id: "링크드인",
       value: "profile",
@@ -15,7 +16,6 @@ const Profile = () => {
       icon: <FaGithub />,
       url: "https://github.com/chickengir1",
     },
-    { id: "이메일", value: "rkdgh1198@gmail.com", icon: <FaEnvelope /> },
   ];
 
   const profile = profileArr.map((item) => {
