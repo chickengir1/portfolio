@@ -3,6 +3,7 @@ import About from "./components/layout/About";
 import WordCloud from "./components/layout/WordCloud";
 import Slider from "./components/layout/Slider";
 import Skills from "./components/chip/Skills";
+import Project from "./components/layout/Project";
 
 const App = () => {
   return (
@@ -22,6 +23,9 @@ const App = () => {
         </div>
         <div>
           <Skills />
+        </div>
+        <div className="flex justify-center bg-[#ccc]">
+          <Project />
         </div>
       </div>
     </div>
