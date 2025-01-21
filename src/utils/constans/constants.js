@@ -72,8 +72,8 @@ export const projects = [
       "뉴스레터 구독",
       "대시보드 스마트팜 기기 조작",
     ],
-    url: "https://34.64.173.146/",
-    github: "https://github.com/chickengir1/elice-Iot3",
+    url: "",
+    github: "https://github.com/chickengir1/Iot-Dashboard",
     techStack: ["Vite", "JavaScript", "Redux", "MUI"],
   },
   {
@@ -82,7 +82,7 @@ export const projects = [
     description: "엘리스 Iot트랙 2차 프로젝트 e-commerce 쇼핑몰 입니다.",
     features: ["배송 수정, 상품 수정", "상품 검색 기능", "카테고리 별 정렬"],
     url: "",
-    github: "https://github.com/chickengir1/Iot-3-e-commerce",
+    github: "https://github.com/chickengir1/e-commerce",
     techStack: ["Styled-components", "JavaScript", "Vite"],
   },
   {
