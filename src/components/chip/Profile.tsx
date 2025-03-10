@@ -14,12 +14,7 @@ const ProfileItem = ({ item }: { item: (typeof PROFILE)[number] }) => {
   );
 
   return url ? (
-    <a
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={CARD_STYLE}
-    >
+    <a href={url} target="_blank" className={CARD_STYLE}>
       {Content}
     </a>
   ) : (

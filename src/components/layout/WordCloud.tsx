@@ -1,35 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
-import useWordCloud from "../../hooks/anime/useWordCloud";
-
-const wordCloudData = {
-  items: [
-    { text: "HTML" },
-    { text: "CSS" },
-    { text: "JavaScript" },
-    { text: "TypeScript" },
-    { text: "React" },
-    { text: "Vite" },
-    { text: "Redux" },
-    { text: "React Query" },
-    { text: "Styled Components" },
-    { text: "React Error Boundary" },
-    { text: "Material UI" },
-    { text: "Tailwind" },
-    { text: "Jest" },
-    { text: "React Hook Form" },
-  ],
-  fontUrl:
-    "https://threejs.org/examples/fonts/helvetiker_regular.typeface.json",
-};
+import { useWordCloud } from "../../hooks/useWordCloud";
+import { WORD_CLOUD_DATA } from "../../utils/skillsConstans";
 
 const WordCloud = () => {
   const canvasRef = useRef<HTMLDivElement>(null);
   const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
   const cameraRef = useRef<THREE.PerspectiveCamera | null>(null);
 
-  const { scene, group, radius } = useWordCloud(wordCloudData);
+  const { scene, group, radius } = useWordCloud(WORD_CLOUD_DATA);
 
   function updateSizes() {
     if (!canvasRef.current || !rendererRef.current || !cameraRef.current)
@@ -50,9 +30,10 @@ const WordCloud = () => {
     if (!canvasRef.current) return;
 
     const renderer = new THREE.WebGLRenderer({ antialias: true });
-
     renderer.setClearColor(0xcccccc);
     renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     canvasRef.current.appendChild(renderer.domElement);
 
     rendererRef.current = renderer;
@@ -72,10 +53,8 @@ const WordCloud = () => {
 
     function animate() {
       requestAnimationFrame(animate);
-
       const angleIncrement = 0.001;
       group.rotateOnAxis(rotationAxis, angleIncrement);
-
       if (rendererRef.current && cameraRef.current) {
         rendererRef.current.render(scene, cameraRef.current);
       }
@@ -90,7 +69,7 @@ const WordCloud = () => {
         renderer.domElement.parentNode.removeChild(renderer.domElement);
       }
     };
-  }, [scene, radius, group, updateSizes]);
+  }, [scene, radius, group]);
 
   return <div ref={canvasRef} className="w-full sm:w-3/4 h-[80vh]" />;
 };

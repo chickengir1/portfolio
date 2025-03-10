@@ -1,18 +1,26 @@
 import { useRef } from "react";
 import { SKILLS } from "../../utils/skillsConstans";
 
-const Slider = () => {
+interface SliderProps {
+  reverse: boolean;
+}
+
+const Slider = ({ reverse }: SliderProps) => {
   const carouselRef = useRef<HTMLDivElement>(null);
 
   const skillCarousel = Array.from({ length: 100 }).reduce<typeof SKILLS>(
     (acc) => acc.concat(SKILLS),
     []
   );
+  const isReverse = reverse ? "animate-slideReverse" : "animate-slide";
 
   return (
     <div className="text-gray-900 py-12">
       <div className="w-[120%] border-y-8 transform mx-auto p-5 overflow-hidden">
-        <div ref={carouselRef} className="flex whitespace-nowrap animate-slide">
+        <div
+          ref={carouselRef}
+          className={`flex whitespace-nowrap ${isReverse}`}
+        >
           {skillCarousel.map((skill, index) => (
             <div key={`${skill.name}-${index}`} className="flex-shrink-0 px-4">
               <h3

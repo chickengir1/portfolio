@@ -7,29 +7,44 @@ import Project from "./components/section/Project";
 
 const App = () => {
   return (
-    <div className="font-kor">
-      <div className="-z-40 sticky top-0 bg-[#ccc] min-h-[80vh] flex items-center justify-center">
+    <main className="font-kor">
+      <section className={styles.headerContainer}>
         <Header />
-      </div>
-      <div id="section1" className="bg-[#2D2D2D]">
+      </section>
+      <section className={styles.aboutSection}>
         <About />
-      </div>
-      <div className="-z-40 sticky top-0 bg-[#ccc] flex justify-center items-center w-full h-screen">
+      </section>
+      <section className={styles.wordCloudContainer}>
         <WordCloud />
-      </div>
-      <div className=" bg-[#2D2D2D] min-h-screen">
-        <div id="section2" className="flex items-center overflow-hidden">
-          <Slider />
+      </section>
+      <section className={styles.bottomSection}>
+        <div className={styles.sliderSection}>
+          <Slider reverse={false} />
         </div>
-        <div>
+        <div className={styles.skillsContainer}>
           <Skills />
         </div>
-        <div className="flex justify-center bg-[#ccc]">
+        <div className={styles.sliderSection}>
+          <Slider reverse={true} />
+        </div>
+        <div className={styles.projectContainer}>
           <Project />
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
 
 export default App;
+
+const styles = {
+  headerContainer:
+    "-z-40 sticky top-0 bg-[#ccc] min-h-[80vh] flex items-center justify-center shadow-md",
+  aboutSection: "bg-[#2D2D2D] py-12",
+  wordCloudContainer:
+    "-z-40 sticky top-0 bg-[#ccc] flex justify-center items-center w-full h-screen",
+  bottomSection: "py-12",
+  sliderSection: "flex items-center overflow-hidden bg-[#2D2D2D]",
+  skillsContainer: "bg-[#2D2D2D]",
+  projectContainer: "flex justify-center bg-[#ccc] py-8",
+};
