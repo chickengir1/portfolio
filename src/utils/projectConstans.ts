@@ -22,7 +22,7 @@ export const PROJECTS = [
     id: "vite-plugin-pages-router",
     title: "vite-plugin-pages-router",
     description:
-      "vite 환경에서도 next.js의 pages-router처럼 사용할 수 있는 플러그인 입니다.",
+      "Vite 환경에서도 next.js의 pages-router처럼 사용할 수 있는 Vite 플러그인 입니다.",
     features: [
       "Suspense를 활용한 Lazy Loading 최적화",
       "슬러그 기반 동적 라우팅 지원",
