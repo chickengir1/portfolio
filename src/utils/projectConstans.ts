@@ -103,9 +103,10 @@ export const PROJECTS = [
       "Discord 서버의 특색에 맞춘 자아와 기능을 가진 봇과 이를 설정할 수 있는 대시보드 웹 인터페이스를 구현한 프로젝트 입니다.",
     features: [
       "OAuth2.0를 활용한 디스코드 로그인",
-      "FriendliAI의 Serverless Endpoint를 이용한 정보 제공",
+      "서버 특성에 맞게 봇의 기능 및 명령어를 커스텀하는 인터페이스",
+      "직관적인 UI를 통해 봇 설정을 관리할 수 있는 웹 대시보드 구현",
     ],
-    url: "https://chickengir1.github.io/LLMfront/",
+    url: "",
     github: "https://github.com/chickengir1/LLMfront",
     techStack: ["React", "OAuth2.0"],
   },
