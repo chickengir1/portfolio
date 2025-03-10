@@ -8,7 +8,7 @@ const Project = () => {
         My Projects
       </h2>
       <h3 className="text-base text-center font-semibold text-blue-500 mb-4 sm:text-lg md:text-xl">
-        폴더를 클릭하면 깃허브로 이동 할 수 있어요
+        폴더 아이콘을 클릭하면 프로젝트 상세 정보를 확인 할 수 있어요
       </h3>
       <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-8">
         {PROJECTS.map((project) => (

@@ -4,7 +4,7 @@ type ProjectProps = {
 
 const TechStack = ({ techStack }: ProjectProps) => {
   return (
-    <div className="flex flex-wrap gap-2 justify-start sm:justify-center">
+    <div className="flex flex-wrap gap-2 justify-start">
       {techStack.map((tech, index) => (
         <p
           key={`${tech}-${index}`}
