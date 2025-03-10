@@ -1,9 +1,9 @@
-import Header from "./components/layout/Header";
-import About from "./components/layout/About";
+import Header from "./components/section/Header";
+import About from "./components/section/About";
 import WordCloud from "./components/layout/WordCloud";
 import Slider from "./components/layout/Slider";
 import Skills from "./components/chip/Skills";
-import Project from "./components/layout/Project";
+import Project from "./components/section/Project";
 
 const App = () => {
   return (

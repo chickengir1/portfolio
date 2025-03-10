@@ -1,8 +1,7 @@
-import React from "react";
-import { SECTIONS } from "../../utils/constans/constants";
+import { ABOUT } from "../../utils/projectDatas";
 
-const Interview: React.FC = () => {
-  const InterviewArr = SECTIONS.map((item) => {
+const Interview = () => {
+  const InterviewArr = ABOUT.map((item) => {
     return (
       <div
         key={item.name}

@@ -1,4 +1,4 @@
-export const SECTIONS = [
+export const ABOUT = [
   {
     name: "사용자를 위한 프론트엔드",
     value:
@@ -11,7 +11,7 @@ export const SECTIONS = [
   },
 ];
 
-export const skills = [
+export const SKILLS = [
   {
     name: "HTML",
     desc: "웹 페이지의 구조를 설계하고 시맨틱 마크업을 작성할 수 있습니다.",
@@ -62,7 +62,7 @@ export const skills = [
   },
 ];
 
-export const projects = [
+export const PROJECTS = [
   {
     id: 1,
     title: "IoT 스마트팜",

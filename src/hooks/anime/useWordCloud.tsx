@@ -13,7 +13,7 @@ const useWordCloud = ({ items, fontUrl }: WordCloudProps) => {
   const groupRef = useRef(new THREE.Group());
   const fontLoader = useMemo(() => new FontLoader(), []);
 
-  const radius = 2.5; // 구의 반지름
+  const radius = 2.5;
 
   useEffect(() => {
     const currentGroup = groupRef.current;

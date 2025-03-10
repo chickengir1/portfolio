@@ -19,10 +19,15 @@ export default {
         dropShadow: {
           strong: "0px 4px 6px rgba(0, 0, 0, 0.8)",
         },
+        slide: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         draw: "draw 2s linear forwards",
         bounceUpDown: "bounceUpDown 1.5s infinite",
+        slide: "slide 600s linear infinite",
       },
     },
   },
