@@ -8,7 +8,7 @@ const TechStack = ({ techStack }: ProjectProps) => {
       {techStack.map((tech, index) => (
         <p
           key={`${tech}-${index}`}
-          className="border-2 px-2 py-1 rounded-lg bg-[#333] text-gray-300 text-sm sm:text-base"
+          className="border-2 border-gray-300 px-2 py-1 rounded-lg bg-[#333] text-gray-300 text-sm sm:text-base"
         >
           {tech}
         </p>

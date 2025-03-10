@@ -6,7 +6,7 @@ const Features = ({ features }: ProjectProps) => {
   return (
     <>
       <h3 className="text-base font-bold text-blue-500 pt-2">주요 기능</h3>
-      <ul className="list-disc list-inside text-gray-700">
+      <ul className="list-disc list-inside space-y-1 pb-2">
         {features.map((feature, index) => (
           <li
             key={index}
