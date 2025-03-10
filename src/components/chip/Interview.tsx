@@ -1,4 +1,4 @@
-import { ABOUT } from "../../utils/projectDatas";
+import { ABOUT } from "../../utils/aboutConstans";
 
 const Interview = () => {
   const InterviewArr = ABOUT.map((item) => {

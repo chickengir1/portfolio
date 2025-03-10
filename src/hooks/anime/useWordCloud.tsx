@@ -60,17 +60,19 @@ const useWordCloud = ({ items, fontUrl }: WordCloudProps) => {
 
           // x^2 + y^2가 구의 반지름 제곱보다 작을 때만 계산
           const distanceSquared = x * x + y * y;
+
+          // z 좌표 계산
+
           if (distanceSquared <= sphereRadius * sphereRadius) {
-            // z 좌표 계산
-            const z = -(
-              sphereRadius -
-              Math.sqrt(sphereRadius * sphereRadius - distanceSquared)
+            const sphereCurvature = Math.sqrt(
+              sphereRadius * sphereRadius - distanceSquared
             );
+
+            const z = -(sphereRadius - sphereCurvature);
             vertex.z = z;
-          } else {
-            // 구의 범위를 벗어난 버텍스는 z를 0으로 설정
-            vertex.z = 0;
           }
+          // 구의 범위를 벗어난 버텍스는 z를 0으로 설정
+          else vertex.z = 0;
 
           positionAttribute.setXYZ(i, vertex.x, vertex.y, vertex.z);
         }
@@ -87,7 +89,6 @@ const useWordCloud = ({ items, fontUrl }: WordCloudProps) => {
         // 텍스트가 구의 바깥쪽을 향하도록 회전 설정
         const lookAtPosition = textMesh.position.clone().multiplyScalar(2);
         textMesh.lookAt(lookAtPosition);
-
         currentGroup.add(textMesh);
       });
     });

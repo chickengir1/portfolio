@@ -1,4 +1,4 @@
-import { SKILLS } from "../../utils/projectDatas";
+import { SKILLS } from "../../utils/skillsConstans";
 
 const Skills = () => {
   return (

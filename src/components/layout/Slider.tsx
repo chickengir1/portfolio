@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { SKILLS } from "../../utils/projectDatas";
+import { SKILLS } from "../../utils/skillsConstans";
 
 const Slider = () => {
   const carouselRef = useRef<HTMLDivElement>(null);
